@@ -1,0 +1,17 @@
+<div fxLayout="row" fxLayoutAlign="center">
+  <div fxFlex="90" fxLayout="column">
+      <div fxFlex>
+        <h1>List Todo!</h1>
+        <p *ngIf="!list.length">not have todo</p>
+        <div *ngIf="list.length">
+          
+          <div *ngFor="let todo of list" style="padding-top:16px">
+            <h4 style="margin:0">{{ todo.title }}</h4>
+            <p>{{ todo.description }}</p>
+            <button (click)="doneTodo(todo.id)" mat-raised-button color="accent">Done</button>
+          </div>
+
+        </div>
+      </div>
+  </div>
+</div>

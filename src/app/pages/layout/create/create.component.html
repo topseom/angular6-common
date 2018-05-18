@@ -1,0 +1,17 @@
+<div fxLayout="row" fxLayoutAlign="center">
+  <div fxFlex="90" fxLayout="column">
+    <h1>Create Todo</h1>
+    <form [formGroup]="form" #f="ngForm" (ngSubmit)="submit(f)" fxLayout="column">
+      <mat-form-field [floatLabel]="'never'" >
+        <input formControlName="title" placeholder="Enter title" matInput>
+        <mat-error>Titile is invalid</mat-error>
+      </mat-form-field>
+      <mat-form-field [floatLabel]="'never'">
+        <input formControlName="description" placeholder="Enter description" matInput>
+        <mat-error>Description is invalid</mat-error>
+      </mat-form-field>
+      <br>
+      <button [disabled]="form.invalid" mat-raised-button color="accent">Add</button>
+    </form>
+  </div>
+</div>
